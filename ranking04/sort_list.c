@@ -1,21 +1,23 @@
 #include "ft_list.h"
+#include <unistd.h>
 
-t_list	*sort_list(t_list* lst, int (*cmp)(int, int))
+t_list	*sort_list(t_list *lst, int (*cmp)(int, int))
 {
-	int swap;
-	t_list *curr = lst;
-	while (lst->next)
+	int tmp;
+	t_list *head;
+
+	head = tmp;
+	while (lst != NULL && lst->next != NULL)
 	{
-		if(((*cmp)(lst->data, lst->next->data))== 0)
+		if ((*cmp)(lst->data, lst->next->data) == 0)
 		{
-			swap = lst->data;
+			tmp = lst->data;
 			lst->data = lst->next->data;
-			lst->next->data = swap;
-			lst = curr;
+			lst->next->data = tmp;
+			lst = head;
 		}
 		else
 			lst = lst->next;
 	}
-	lst = curr;
-	return lst;
+	return (head);
 }
