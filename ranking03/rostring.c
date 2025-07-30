@@ -25,7 +25,7 @@ int main (int ac , char *av[])
         while (av[1][i] && is_space(av[1][i]))
             i++;
         start = i;
-        if (av[1][start] != 0)
+        if (av[1][start] != '\0')
         {
             while (av[1][len])
                 len++;
