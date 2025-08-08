@@ -3,8 +3,7 @@ void ft_putnbr(char nbr)
 {
     if(nbr >= 10)
         ft_putnbr(nbr / 10);
-    char num = nbr % 10 + '0';
-    write(1, &num, 1);
+    write(1, &"0123456789"[nbr % 10], 1);
 }
 
 int main (void)

@@ -15,13 +15,11 @@ unsigned int ft_atoi(char *str)
 
 void put_hex(int nbr)
 {
-    char *digits = "0123456789abcdef";
-
+    
     if (nbr >= 16)
         put_hex(nbr / 16);
-    nbr = digits[nbr % 16];
-
-    write(1, &nbr, 1);
+    
+    write(1, &"0123456789abcdef"[nbr % 16], 1);
 
 }
 
